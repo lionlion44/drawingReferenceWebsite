@@ -20,4 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     shapeForm.addEventListener('input', updateImage);
     shapeForm.addEventListener('change', updateImage);
+
+    // Call updateImage once to set the initial image
+    updateImage();
 });
