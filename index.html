@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shape Selector</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Select Shape Parameters</h1>
+    <form id="shapeForm">
+        <label for="shape">Shape:</label>
+        <select id="shape" name="shape">
+            <option value="cube">Cube</option>
+            <option value="cone">Cone</option>
+            <!-- Add more shapes as needed -->
+        </select>
+
+        <label for="index">Index:</label>
+        <input type="number" id="index" name="index" min="1" max="10">
+
+        <label for="light">Light:</label>
+        <select id="light" name="light">
+            <option value="distant">Distant</option>
+            <option value="close">Close</option>
+        </select>
+
+        <label for="background">Background:</label>
+        <input type="checkbox" id="background" name="background">
+
+        <label for="wireframe">Wireframe:</label>
+        <input type="checkbox" id="wireframe" name="wireframe">
+
+        <button type="submit">Show Shape</button>
+    </form>
+    <div id="imageDisplay">
+        <img id="shapeImage" src="" alt="Selected Shape">
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
