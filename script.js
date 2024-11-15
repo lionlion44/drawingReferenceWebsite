@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const shape = document.getElementById('shape').value;
         const index = document.getElementById('index').value.padStart(4, '0');
         const light = document.getElementById('light').value === 'distant' ? 'distant' : 'spot';
-        const background = document.getElementById('background').checked ? 'NoBackground' : 'Background';
+        const background = document.getElementById('background').checked ? 'Background' : 'NoBackground';
         const wireframe = document.getElementById('wireframe').checked ? 'openGL' : '';
 
         let imagePath = `images/${shape}_${light}_${background}_v01.${index}.png`;
