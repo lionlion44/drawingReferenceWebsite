@@ -2,13 +2,16 @@ document.getElementById('shapeForm').addEventListener('submit', function(event) 
     event.preventDefault();
 
     const shape = document.getElementById('shape').value;
-    const index = document.getElementById('index').value;
-    const light = document.getElementById('light').value;
-    const background = document.getElementById('background').checked ? 'no-bg' : 'bg';
-    const wireframe = document.getElementById('wireframe').checked ? 'wireframe' : 'solid';
+    const index = document.getElementById('index').value.padStart(4, '0');
+    const light = document.getElementById('light').value === 'distant' ? 'distant' : 'spot';
+    const background = document.getElementById('background').checked ? 'NoBackground' : 'Background';
+    const wireframe = document.getElementById('wireframe').checked ? 'openGL' : '';
 
-    const imagePath = `images/${shape}_${index}_${light}_${background}_${wireframe}.png`;
+    let imagePath = `images/${shape}_${light}_${background}_v01.${index}.png`;
+    if (wireframe) {
+        imagePath = `images/${shape}_${wireframe}_v01.${index}.png`;
+    }
 
     document.getElementById('shapeImage').src = imagePath;
-    document.getElementById('shapeImage').alt = `${shape} image with index ${index}, ${light} light, ${background}, and ${wireframe}`;
+    document.getElementById('shapeImage').alt = `${shape} image with ${light} light, ${background}, and ${wireframe ? 'wireframe' : 'solid'}`;
 });
